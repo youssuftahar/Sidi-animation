@@ -1,1 +1,16 @@
-name: Render Videoecho on: [push]echo jobs:echo   render:echo     runs-on: ubuntu-latestecho     steps:echo       - uses: actions/checkout@v4echo       - uses: actions/setup-node@v4echo         with:echo           node-version: 18echo       - run: npm installecho       - run: npx remotion render PremiumProductShowcase src/index.js output.mp4echo       - uses: actions/upload-artifact@v4echo         with:echo           name: iPhone17_4K_Videoecho           path: output.mp4
+name: Render Video 
+on: [push] 
+jobs: 
+  render: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - uses: actions/checkout@v4 
+      - uses: actions/setup-node@v4 
+        with: 
+          node-version: 18 
+      - run: npm install 
+      - run: npx remotion render PremiumProductShowcase src/index.js output.mp4 
+      - uses: actions/upload-artifact@v4 
+        with: 
+          name: iPhone17_4K_Video 
+          path: output.mp4
