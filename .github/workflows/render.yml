@@ -9,7 +9,7 @@ jobs:
         with: 
           node-version: 18 
       - run: npm install 
-      - run: npx -p @remotion/cli remotion render PremiumProductShowcase src/index.js output.mp4 
+      - run: npx -p @remotion/cli remotion render src/index.js PremiumProductShowcase output.mp4 
       - uses: actions/upload-artifact@v4 
         with: 
           name: iPhone17_4K_Video 
